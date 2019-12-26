@@ -24,17 +24,17 @@ window.addEventListener('load',() => {
       const proxy = `https://cors-anywhere.herokuapp.com/`;
       const api = `${proxy}https://api.darksky.net/forecast/31dcc1e67432a573ed24adba58fb4bdd/${lat},${long}`
       const address = `https://www.latlong.net/c/?lat=${lat}&long=${long}`
-      const google = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${API_KEY}`
-      console.log(google)
-        fetch(google)
-          .then(response => {
-            return response.json();
-          })
-          .then(data => {
-            console.log(data)
-            const { compound_code } = data.plus_code;
-            town.textContent = compound_code.substring(7,(compound_code.length));
-          })
+      // const google = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${API_KEY}`
+      // console.log(google)
+      //   fetch(google)
+      //     .then(response => {
+      //       return response.json();
+      //     })
+      //     .then(data => {
+      //       console.log(data)
+      //       const { compound_code } = data.plus_code;
+      //       town.textContent = compound_code.substring(7,(compound_code.length));
+      //     })
 
       fetch(api)
         .then(response => {
